@@ -1,79 +1,68 @@
-import { useState } from 'react'
-import Layout from '../components/Layout'
-
-export default function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [submitMessage, setSubmitMessage] = useState('')
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitMessage(`Thank you, ${name}! Your message has been sent.`)
-    setName('')
-    setEmail('')
-    setMessage('')
-  }
-
-  return (
-    <Layout>
-      <div className="container mx-auto px-4 py-20">
-        <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-            <p className="mb-4">If you have any questions or concerns, please don't hesitate to reach out to us.</p>
-            <div className="space-y-2">
-              <p><strong>Address:</strong> 1 General Mills Blvd, Minneapolis, MN 55426, United States</p>
-              <p><strong>Phone:</strong> +1 763-764-2311</p>
-              <p><strong>Email:</strong> BettyCrocker@emails.bettycrocker.com</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Betty Crocker for inquiries and support">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Contact Us - Betty Crocker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/custom-js.js" defer></script>
+</head>
+<body>
+    <header id="gHeader"></header>
+    <main>
+        <section class="page-header" style="background-image: url('./img/background5.png');">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
             </div>
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Send us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block mb-1">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block mb-1">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block mb-1">Message</label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800"
-                ></textarea>
-              </div>
-              <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition-colors">
-                Send Message
-              </button>
-            </form>
-            {submitMessage && <p className="mt-4 text-green-600 dark:text-green-400">{submitMessage}</p>}
-          </div>
-        </div>
-      </div>
-    </Layout>
-  )
-}
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>We'd love to hear from you! Whether you have a question about our products, need recipe advice, or just want to share your Betty Crocker experience, we're here to help.</p>
+                        <ul class="contact-details">
+                            <li>
+                                <strong>Address:</strong>
+                                <p>1 General Mills Blvd, Minneapolis, MN 55426, United States</p>
+                            </li>
+                            <li>
+                                <strong>Phone:</strong>
+                                <p>+1 763-764-2311</p>
+                            </li>
+                            <li>
+                                <strong>Email:</strong>
+                                <p>BettyCrocker@emails.bettycrocker.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <h2>Send Us a Message</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="gFooter"></footer>
+</body>
+</html>
 
