@@ -1,64 +1,68 @@
-import Layout from '../components/Layout'
-import Image from 'next/image'
-
-const products = [
-  {
-    name: "Milk Chocolate Brownie Mix",
-    image: "/placeholder.svg",
-    description: "BROWNIE MIX: Bake a delicious dessert with this fudge brownie mix that makes mouthwatering brownies
-QUICK AND EASY: Make brownies by just adding a few ingredients as directed and popping in the oven
-ENDLESS OPTIONS: Prepare chocolate brownie mix as is or explore the many Betty Crocker creative recipes
-CHOCOLATE FUDGE: Enjoy the rich taste of fudge chocolate in every bite
-A TRUSTED FAVORITE: Betty Crocker brings you the same fresh-baked favorites you've known and loved all your life
-BOX TOPS FOR EDUCATION PARTICIPATING PRODUCT: Give back to schools with Betty Crocker. Download the Box Tops App to learn more & start earning cash for schools in need today."
-  },
-  {
-    name: "Ultimate Fudge Mocha Browny",
-    image: "/placeholder.svg",
-    description: "Brownies: 1/2 cup semisweet chocolate chips, 1/2 cup butter or margarine, 1 cup packed dark brown sugar, 2 eggs, 2 tablespoons coffee-flavored liqueur, 1 teaspoon vanilla, 3/4 cup Gold Medal™ all-purpose flour, 2 tablespoons unsweetened baking cocoa, 1/2 teaspoon salt. Frosting: 1/3 cup butter or margarine (softened), 2 cups powdered sugar, 2 tablespoons coffee-flavored liqueur. Glaze: 1/2 cup whipping cream, 1 tablespoon light corn syrup, 1 cup semisweet chocolate chips (6 oz)."
-  },
-  {
-    name: "Ice Cream Cake",
-    image: "/placeholder.svg",
-    description: "INGREDIENTS: 1 1/2 cups Gold Medal™ all-purpose flour, 1 cup sugar, 1/4 cup unsweetened baking cocoa, 1 teaspoon baking soda, 1/2 teaspoon salt, 1 cup water, 1/3 cup vegetable oil, 1 teaspoon white vinegar, 1 teaspoon vanilla, 1 cup chocolate fudge topping, 1 1/2 quarts (6 cups) vanilla ice cream (slightly softened), 2 cups malted milk ball candies (coarsely chopped), 1 cup whipping (heavy) cream, 1/4 cup chocolate fudge topping."
-  },
-  {
-    name: "Lemon Cake",
-    image: "/placeholder.svg",
-    description: "INGREDIENTS: 1 box Betty Crocker™ Super Moist™ lemon cake mix, Water, vegetable oil and eggs called for on cake mix box, 3 oz cream cheese (softened), 1 tablespoon milk, 1 tablespoon grated lemon peel, 2 cups whipping cream, 2/3 cup powdered sugar."
-  },
-  {
-    name: "French Vanilla Mix",
-    image: "/placeholder.svg",
-    description: "CAKE MIX: Bake a delicious, moist lemon cake dessert. QUICK AND EASY: Make a cake by just adding a few simple ingredients as directed and popping in the oven. ENDLESS OPTIONS: Add your own twist to these mixes by using as cupcake mix or trying tested and trusted Betty Crocker recipes. DELICIOUS & SPONGY: Enjoy the sweetness of this versatile cake mix and make it your own. SPECIAL OCCASION TREATS: Bake lemon cake mix for sweet celebrations and everyday. BOX TOPS FOR EDUCATION PARTICIPATING PRODUCT: Give back to schools with Betty Crocker - Download the Box Tops App to learn more & start earning cash for schools in need today."
-  },
-]
-
-export default function Products() {
-  return (
-    <Layout>
-      <div className="container mx-auto px-4 py-20">
-        <h1 className="text-4xl font-bold text-center mb-12">OUR PRODUCTS</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-              <div className="relative h-64">
-                <Image 
-                  src={product.image} 
-                  alt={product.name} 
-                  layout="fill" 
-                  objectFit="cover"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-xl font-bold mb-2">{product.name}</h2>
-                <p className="text-gray-600 dark:text-gray-300">{product.description}</p>
-              </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Products - Betty Crocker</title>
+    <meta name="description" content="Explore Betty Crocker's delicious range of baking mixes and products">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/custom-js.js" defer></script>
+</head>
+<body>
+    <header id="gHeader"></header>
+    <main>
+        <section class="page-header" style="background-image: url('./img/background5.png');">
+            <div class="container">
+                <h1 class="page-title">Our Products</h1>
             </div>
-          ))}
-        </div>
-      </div>
-    </Layout>
-  )
-}
+        </section>
+
+        <section class="product-showcase">
+            <div class="container">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="./img/image5.png" alt="Milk Chocolate Brownie Mix" class="product-image">
+                        <h2 class="product-title">Milk Chocolate Brownie Mix</h2>
+                        <p class="product-description">Indulge in rich, fudgy brownies with our easy-to-make mix.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="./img/ultimate-fudge-mocha-browny.png" alt="Ultimate Fudge Mocha Brownie" class="product-image">
+                        <h2 class="product-title">Ultimate Fudge Mocha Brownie</h2>
+                        <p class="product-description">A decadent blend of chocolate and coffee flavors in every bite.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="./img/ice-cream-cake.png" alt="Ice Cream Cake" class="product-image">
+                        <h2 class="product-title">Ice Cream Cake</h2>
+                        <p class="product-description">The perfect combination of cake and ice cream for any celebration.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="./img/lemon-cake.png" alt="Lemon Cake Mix" class="product-image">
+                        <h2 class="product-title">Lemon Cake Mix</h2>
+                        <p class="product-description">Bright, zesty lemon flavor in a moist and delicious cake.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="./img/french-vanilla.png" alt="French Vanilla Cake Mix" class="product-image">
+                        <h2 class="product-title">French Vanilla Cake Mix</h2>
+                        <p class="product-description">Classic vanilla flavor for endless baking possibilities.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="./img/cake.png" alt="Assorted Pastries" class="product-image">
+                        <h2 class="product-title">Assorted Pastries</h2>
+                        <p class="product-description">A variety of delicious pastries for every occasion.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="gFooter"></footer>
+</body>
+</html>
 
